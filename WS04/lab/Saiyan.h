@@ -9,8 +9,13 @@
 // 
 //=============================================
 
+
+
 #ifndef SDDS_SAIYAN_H_
 #define SDDS_SAIYAN_H_
+
+
+
 
 
 namespace sdds {
@@ -33,5 +38,7 @@ namespace sdds {
 		bool hasLost(const Saiyan& other) const;
 	};
 }
+
+
 
 #endif

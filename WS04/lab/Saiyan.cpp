@@ -8,10 +8,12 @@
 // Worshop : 4
 // 
 //=============================================
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <string.h>
 #include "Saiyan.h"
+
 
 
 using namespace std;
@@ -56,7 +58,6 @@ namespace sdds {
 		{
 			cout << "Invalid Saiyan!" << endl;
 		}
-
 	}
 	void Saiyan::set(const char* name, int dob, int power, bool super) {
 		if (name == nullptr || strlen(name) == 0 || dob > 2020 || power <= 0)
