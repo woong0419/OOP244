@@ -6,6 +6,16 @@
 // Description:
 // This file tests lab section of your workshp
 /////////////////////////////////////////////
+//==============================================
+// Name:           Woong O
+// Student Number: 124820192
+// Email:          wo@myseneca.ca
+// Section:        NGG
+// Date:           4 FEB
+//==============================================
+// Worshop : 4
+// 
+//=============================================
 
 #include <iostream>
 #include "Saiyan.h"

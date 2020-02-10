@@ -20,7 +20,7 @@ namespace sdds {
 		setEmpty();
 	}
 	Saiyan::Saiyan(const char* name, int dob, int power, int level) {
-
+		m_name = nullptr;
 		set(name, dob, power, level);
 		m_super = false;
 	}
@@ -59,12 +59,12 @@ namespace sdds {
 		{
 			cout << m_name << endl;
 			cout << "DOB: " << m_dob << " Power: " << m_power << endl;
-			cout << "Super Saiyan Ability: " << (isSuper() ? "Super Saiyan." : "Not super Saiyan.") << endl;
+			cout << "Super Saiyan Ability: " << (isSuper() ? "Super Saiyan." : "Not super Saiyan.\n") << endl;
 			if (isSuper())
 			{
 				cout << "Super Saiyan level is: " << m_level << endl;
 			}
-			cout << endl;
+			
 		}
 		else
 		{
@@ -80,20 +80,29 @@ namespace sdds {
 		}
 		else
 		{
-			m_name = nullptr;
+			if (m_name != nullptr)
+			{
+				delete[] m_name;
+
+			}
+
+
 			m_name = new char[strlen(name) + 1];
+
+
 
 
 			strcpy(m_name, name);
 			m_dob = dob;
 			m_power = power;
-			m_level = level;
+			m_super = super;
 			if (super) {
-				m_super = super;
+				m_level = level;
 			}
 		}
 	}
-	bool Saiyan::hasLost(Saiyan& other) {
+	bool Saiyan::hasLost(Saiyan& other)
+	{
 		int valid = 1;
 		if (isValid() == 0 || other.isValid() == 0)
 		{
@@ -109,7 +118,8 @@ namespace sdds {
 				valid = 0;
 
 			}
-			return valid;
+
 		}
+		return valid;
 	}
 }
