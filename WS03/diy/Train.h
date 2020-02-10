@@ -23,7 +23,8 @@ namespace sdds {
 		double weight;
 	public:
 		void init(const char* cn, double w);
-		void cargoDisplay() const;
+		const char* cargoDescription() const;
+		double cargoWeight() const;
 		bool cargoWeightIn(double w);
 		bool cargoWeightde(double w);
 	};
@@ -31,7 +32,7 @@ namespace sdds {
 	{
 		char name[MAX_NAME + 1];
 		int id;
-		struct Cargo* cargo;
+		class Cargo* cargo;
 	public:
 		void setTrain(const char* n, int number);
 		bool isEmpty() const;

@@ -51,7 +51,9 @@ namespace sdds {
 			cout << "Name: " << name << " ID: " << id << endl;
 			if (cargo != nullptr)
 			{
-				cargo->cargoDisplay();
+				cout << fixed;
+				cout.precision(2);
+				cout << "Cargo: " << cargo->cargoDescription() << " Weight: " << cargo->cargoWeight() << endl;
 			}
 			else
 			{
@@ -76,7 +78,7 @@ namespace sdds {
 		{
 			description[0] = '\0';
 		}
-		if (w >= MAX_WEIGHT || w<= MIN_WEIGHT)
+		if (w >= MAX_WEIGHT || w <= MIN_WEIGHT)
 		{
 			weight = MIN_WEIGHT;
 		}
@@ -85,10 +87,11 @@ namespace sdds {
 			weight = w;
 		}
 	}
-	void Cargo::cargoDisplay() const {
-		
-		cout << "Cargo: " << description << " Weight: ";
-		cout << fixed; cout.precision(2); cout << weight << endl;
+	const char* Cargo::cargoDescription() const {
+		return description;
+	}
+	double Cargo::cargoWeight() const {
+		return weight;
 	}
 	bool Cargo::cargoWeightIn(double w) {
 		int valid = 1;
@@ -140,10 +143,10 @@ namespace sdds {
 		int valid = 1;
 		if (cargo != nullptr)
 		{
-			if (cargo->cargoWeightIn(w)==0) {
+			if (cargo->cargoWeightIn(w) == 0) {
 				valid = 0;
 			}
-			
+
 		}
 		else {
 			valid = 0;
@@ -154,7 +157,7 @@ namespace sdds {
 		int valid = 1;
 		if (cargo != nullptr)
 		{
-			if (cargo->cargoWeightde(w)==0) {
+			if (cargo->cargoWeightde(w) == 0) {
 				valid = 0;
 			}
 		}
