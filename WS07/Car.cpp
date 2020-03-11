@@ -26,15 +26,7 @@ namespace sdds {
 		{
 			*this = Car();
 		}
-		/*if (strlen(type) == 0 || year < MIN_YEAR || spd < MIN_SPEED || sov < 1)
-		{
-			*this = Car();
-		}
-		else
-		{
-			strncpy(m_carType, type, MAX_CHAR);
-			m_regYear = year;
-		}*/
+		
 
 	}
 	void Car::finetune() {
@@ -75,15 +67,6 @@ namespace sdds {
 		cout << "Enter the car registration year: ";
 		in >> tempRegYear;
 		Vehicle::input(in);
-		/*if (strlen(tempType) == 0 || tempRegYear < MIN_YEAR)
-		{
-			*this = Car();
-		}
-		else {
-
-			strcpy(m_carType, tempType);
-			m_regYear = tempRegYear;
-		}*/
 		isValid(tempType, tempRegYear);
 
 		return in;

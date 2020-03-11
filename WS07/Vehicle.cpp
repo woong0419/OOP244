@@ -53,7 +53,7 @@ namespace sdds {
 			os << "|" << m_speed << "|" << m_noOfSeats << endl;
 			if (m_speed > MAX_SPEED)
 			{
-				os << "Car has to be fine-tuned for speed limit" << endl;
+				os << "Car has to be fine tuned for speed limit" << endl;
 			}
 		}
 		return os;
@@ -66,16 +66,6 @@ namespace sdds {
 		cout << "Enter no of seats: ";
 		in >> tempNOS;
 		*this=Vehicle(tempSpeed, tempNOS);
-		/*
-		if (tempSpeed < MIN_SPEED || tempNOS < 1) {
-			*this = Vehicle();
-		}
-		else
-		{
-			m_speed = tempSpeed;
-			m_noOfSeats = tempNOS;
-		}
-		*/
 		return in;
 	}
 	ostream& operator<<(ostream& os, const Vehicle& v) {
